@@ -1,4 +1,4 @@
-package be.intecbrussel.petstoreproject.service;
+package be.intecbrussel.petstoreproject.models;
 
 import javax.persistence.OneToMany;
 
