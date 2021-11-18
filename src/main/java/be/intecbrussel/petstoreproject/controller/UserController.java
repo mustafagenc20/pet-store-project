@@ -1,16 +1,18 @@
 package be.intecbrussel.petstoreproject.controller;
 
-import be.intecbrussel.petstoreproject.service.User;
-import org.springframework.http.HttpStatus;
+import be.intecbrussel.petstoreproject.models.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
+@RequestMapping
+@RequiredArgsConstructor
 public class UserController {
-    @RequestMapping(method = RequestMethod.GET, path="/user")
+    @GetMapping("/user")
     public ResponseEntity<User> getUser(String id) {
 //        if ("1".equals(id)) {
 //            user.setId(1);
