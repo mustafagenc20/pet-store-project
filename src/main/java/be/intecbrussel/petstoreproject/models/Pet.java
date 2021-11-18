@@ -1,13 +1,16 @@
-package be.intecbrussel.petstoreproject.service;
-import lombok.Data;
+package be.intecbrussel.petstoreproject.models;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.List;
 
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Data
+@Getter
+@Setter
 @Accessors(chain = true)
 public class Pet {
 
