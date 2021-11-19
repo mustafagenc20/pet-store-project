@@ -8,10 +8,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
-@Repository
 public interface PetRepository extends JpaRepository<Pet, Long> {
 
-    @Query("SELECT p FROM Pet p WHERE p.status IN :petStatuses")
-    List<Pet> findAllByStatus(@Param("petStatuses") PetStatus[] petStatuses);
+    Pet save(Pet pet);
+    void delete(Long id);
+    Optional<Pet> findById(Long id);
+    Optional<Pet> findByStatus(String status);
+
+
 }
