@@ -1,12 +1,18 @@
 package be.intecbrussel.petstoreproject.models;
 
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.OffsetDateTime;
 
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Order {
     @Id
     @GeneratedValue

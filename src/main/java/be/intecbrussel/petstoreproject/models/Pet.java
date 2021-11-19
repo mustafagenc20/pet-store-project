@@ -6,12 +6,11 @@ import javax.persistence.*;
 import java.util.List;
 
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Getter
 @Setter
-@Accessors(chain = true)
 public class Pet {
 
     @Id
@@ -20,13 +19,11 @@ public class Pet {
 
     @ManyToOne
     private Category category;
-
     private String name;
 
-    @ElementCollection
     private List<String> photoUrls;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany
     private List<Tag> tags;
 
     private String status;

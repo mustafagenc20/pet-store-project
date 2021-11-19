@@ -12,7 +12,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
-@Accessors(chain = true)
 public class User {
     @Id
     @GeneratedValue

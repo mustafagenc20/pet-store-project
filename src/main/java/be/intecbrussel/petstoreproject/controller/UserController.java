@@ -14,8 +14,7 @@ public class UserController {
     @GetMapping("/user")
     public ResponseEntity<User> getUser(String id) {
 //        if ("1".equals(id)) {
-//            user.setId(1);
-//            user.setLastName("Nani");
+//            user.setLastName("Mustafa");
 //            return ResponseEntity.ok(user);
 //
 //        } else {
