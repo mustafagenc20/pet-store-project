@@ -1,12 +1,17 @@
 package be.intecbrussel.petstoreproject.models;
 
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Getter
+@Setter
 @Accessors(chain = true)
 public class User {
     @Id
