@@ -1,4 +1,4 @@
-package be.intecbrussel.petstoreproject.models;
+package be.intecbrussel.petstoreproject.models.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,14 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+//@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Category {
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     private Integer id;
     private String name;
 }
