@@ -7,12 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @Getter
 @Setter
 public class ApiResponse {
+
     private Integer code;
     private String type;
     private String message;

@@ -1,26 +1,30 @@
 package be.intecbrussel.petstoreproject.models;
 
+import be.intecbrussel.petstoreproject.service.OrderStatus;
 import lombok.*;
-import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.OffsetDateTime;
+import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue
     private long id;
 
-    private long petID;
+    private long petId;
     private long quantity;
-    private OffsetDateTime shipDate;
-    private String status;
+    private LocalDateTime shipDate;
+
+//    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
     private boolean complete;
 }
