@@ -1,4 +1,4 @@
-package be.intecbrussel.petstoreproject.models;
+package be.intecbrussel.petstoreproject.models.entity;
 import lombok.*;
 
 import org.hibernate.annotations.Fetch;
@@ -19,17 +19,15 @@ public class Pet {
     @GeneratedValue
     private Long Id;
 
-    @ManyToOne
-    private Category category;
+//    @ManyToOne
+//    private Category category;
     private String name;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @Fetch(FetchMode.SUBSELECT)
-    private List<String> photoUrls;
+//    @ElementCollection(fetch = FetchType.EAGER)
+//    @Fetch(FetchMode.SUBSELECT)
+//    private List<String> photoUrls;
 
-    @ManyToMany
-    private List<Tag> tags;
-
-//    @Enumerated(EnumType.STRING)
+/*    @ManyToMany
+    private List<Tag> tags;*/
     private String status;
 }
