@@ -4,6 +4,7 @@ import be.intecbrussel.petstoreproject.models.Pet;
 import be.intecbrussel.petstoreproject.repository.PetRepository;
 import be.intecbrussel.petstoreproject.service.PetService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

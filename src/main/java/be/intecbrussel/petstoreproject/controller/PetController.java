@@ -26,8 +26,8 @@ public class PetController {
     }
 
     @PutMapping
-    public ResponseEntity updatePet(@RequestBody Pet pet) {
-        Pet updatedPet = petService.createPet(pet);
+    public ResponseEntity updatePet(@RequestBody Long id, Pet pet) {
+        Pet updatedPet = petService.updatePet(id, pet);
         return ResponseEntity.status(HttpStatus.CREATED).body(updatedPet);
     }
 
