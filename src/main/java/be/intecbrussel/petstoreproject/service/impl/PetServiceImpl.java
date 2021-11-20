@@ -1,17 +1,23 @@
 package be.intecbrussel.petstoreproject.service.impl;
 
-import be.intecbrussel.petstoreproject.models.Pet;
+import be.intecbrussel.petstoreproject.models.ApiResponse;
+import be.intecbrussel.petstoreproject.models.entity.Pet;
 import be.intecbrussel.petstoreproject.repository.PetRepository;
 import be.intecbrussel.petstoreproject.service.PetService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
+@Service("petService")
+//@RequiredArgsConstructor
 public class PetServiceImpl implements PetService {
 
     private final PetRepository petRepository;
+
+    public PetServiceImpl(PetRepository petRepository) {
+        this.petRepository = petRepository;
+    }
 
     @Override
     public Pet createPet(Pet pet) {
@@ -19,7 +25,7 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Pet updatePet(Long id, Pet pet) {
+    public Pet updatePet(Pet pet) {
         return petRepository.save(pet);
     }
 
@@ -30,11 +36,11 @@ public class PetServiceImpl implements PetService {
 
     @Override
     public Pet findPetByStatus(String status) {
-        return petRepository.findByStatus(status);
+        return petRepository.findByStatus(status).get();
     }
 
     @Override
     public void deletePetById(Long id) {
-        petRepository.delete(id);
+        petRepository.deleteById(id);
     }
 }
