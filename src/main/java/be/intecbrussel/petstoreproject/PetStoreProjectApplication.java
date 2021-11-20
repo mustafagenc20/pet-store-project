@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Product API", version = "2.0", description = "Product Information"))
+@OpenAPIDefinition(info = @Info(title = "Pet-Store Api", version = "1.0"))
 public class PetStoreProjectApplication {
 
     public static void main(String[] args) {
