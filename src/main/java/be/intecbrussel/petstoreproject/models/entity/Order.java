@@ -1,6 +1,6 @@
-package be.intecbrussel.petstoreproject.models;
+package be.intecbrussel.petstoreproject.models.entity;
 
-import be.intecbrussel.petstoreproject.service.OrderStatus;
+import be.intecbrussel.petstoreproject.models.enums.OrderStatus;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -9,22 +9,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@Entity
+//@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "orders")
 public class Order {
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     private long id;
 
     private long petId;
     private long quantity;
     private LocalDateTime shipDate;
 
-//    @Enumerated(EnumType.STRING)
     private OrderStatus status;
     private boolean complete;
 }
