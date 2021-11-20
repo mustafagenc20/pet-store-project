@@ -1,7 +1,6 @@
 package be.intecbrussel.petstoreproject.service;
 
-import be.intecbrussel.petstoreproject.models.Order;
-import be.intecbrussel.petstoreproject.models.Pet;
+import be.intecbrussel.petstoreproject.models.entity.Order;
 
 import java.util.List;
 

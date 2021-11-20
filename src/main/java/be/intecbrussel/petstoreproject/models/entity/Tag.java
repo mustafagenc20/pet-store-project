@@ -1,4 +1,4 @@
-package be.intecbrussel.petstoreproject.models;
+package be.intecbrussel.petstoreproject.models.entity;
 
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -7,14 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+//@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Tag {
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     private Long id;
     private String name;
 }
