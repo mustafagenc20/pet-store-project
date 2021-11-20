@@ -10,8 +10,8 @@ public interface UserService {
     User createUser(User user);
     User createWithArray(ArrayList id);
     User createWithList(List id);
-    User getLogin(String userName, String password);
+    User getLogin(String username, String password);
     User getLogout();
-    User updateUserName(String userName);
-    void deleteUserName(String userName);
+    User updateUsername(String username);
+    void deleteUsername(String username);
 }
