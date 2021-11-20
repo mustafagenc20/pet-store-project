@@ -8,18 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
-    @GetMapping("/user")
-    public ResponseEntity<User> getUser(String id) {
-//        if ("1".equals(id)) {
-//            user.setLastName("Mustafa");
-//            return ResponseEntity.ok(user);
+//    @Autowired
+//    UserDAO userDAO;
 //
+//    @PostMapping
+//    public ResponseEntity<ApiResponse> postUser(@RequestBody User user) {
+//        if (user.getId() != null && user.getId() > 0) {
+//            return ResponseEntity.badRequest().body(new ApiResponse(404, "Not found", "User not found."));
 //        } else {
-//            throw new ResponseStatusException(HttpStatus.CONFLICT, "Not found");
+//            userDAO.save(user);
+//            return ResponseEntity.ok(new ApiResponse(200, "OK", "User saved to the database"));
 //        }
-        return null;
-    }
+//    }
 }
