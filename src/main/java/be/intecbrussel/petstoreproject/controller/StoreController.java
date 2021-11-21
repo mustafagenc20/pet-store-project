@@ -1,57 +1,46 @@
 package be.intecbrussel.petstoreproject.controller;
 
+import be.intecbrussel.petstoreproject.models.ApiResponse;
+import be.intecbrussel.petstoreproject.models.entity.Order;
+import be.intecbrussel.petstoreproject.models.entity.Pet;
+import be.intecbrussel.petstoreproject.repository.OrderRepository;
 import be.intecbrussel.petstoreproject.service.StoreService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//@RestController
-//@RequestMapping("/store")
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/store")
 @RequiredArgsConstructor
 public class StoreController {
 
-/*    private final StoreService storeService;
+    private final StoreService storeService;
 
     @GetMapping("/inventory")
-    public ResponseEntity<List<Pet>> getAllPets(){
-        List<Pet> pets = petDAO.findAll();
-        return ResponseEntity.ok(pets);
+    public ResponseEntity<List<Order>> createOrder(Order order){
+        return null;
     }
 
     @PostMapping("/order")
     public ResponseEntity<ApiResponse> postOrder(@RequestBody Order order){
-
-        try {
-            orderDAO.save(order);
-            return ResponseEntity.ok(new ApiResponse(200,"OK", "Order placed successfully"));
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(new ApiResponse(400,"Bad Request", "Order did not place"));
-
-        }
-
+        return ResponseEntity.badRequest().body(new ApiResponse(400,
+                "Invalid order",
+                "Invalid order"));
     }
 
     @GetMapping("/order/{id}")
     public ResponseEntity getOrderById(@PathVariable("id") Long id) {
-        if (id == null || id == 0) {
-            return ResponseEntity.badRequest().body(new ApiResponse(404, "not found", " Order not found."));
-        } else {
-            Optional<Order> byId = orderDAO.findById(id);
-            if (byId.isPresent())
-                return ResponseEntity.ok(byId.get());
-            else {
-                return ResponseEntity.badRequest().body(new ApiResponse(404, "not found", " Order not found."));
-            }
-        }
+        return ResponseEntity.badRequest().body(new ApiResponse(400,
+                    "Invalid ID supplied",
+                    "Invalid ID supplied"));
     }
 
     @DeleteMapping("/order/{id}")
     public ResponseEntity deleteOrderById(@PathVariable("id") Long id) {
-        if (id == null || id == 0) {
-            return ResponseEntity.badRequest().body(new ApiResponse(404, "not found", " Order not found."));
-        } else {
-            orderDAO.deleteById(id);
-            return ResponseEntity.ok(new ApiResponse(200,"OK","Order deleted from the database"));
-        }
-    }*/
+        return ResponseEntity.ok(new ApiResponse(200,"OK","Order deleted"));
+    }
 }
