@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface UserService {
-/*    User createUser(User user);
-    User createWithArray(ArrayList id);
-    User createWithList(List id);
+    User createUser(User user);
+    User createWithArray(List id);
+    User createWithList(List String);
     User getLogin(String username, String password);
     User getLogout();
-    User updateUsername(String username);
-    void deleteUsername(String username);*/
+    User updateUser(String username);
+    void deleteUser(String username);
 }

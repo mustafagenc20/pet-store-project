@@ -8,18 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-/*    @Override
+
+    @Override
     public User createUser(User user) {
         return null;
     }
 
     @Override
-    public User createWithArray(ArrayList id) {
-        return UserRepository.;
+    public User createWithArray(List id) {
+        return null;
     }
 
     @Override
-    public User createWithList(List id) {
+    public User createWithList(List String) {
         return null;
     }
 
@@ -34,12 +35,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUsername(String username) {
+    public User updateUser(String username) {
         return null;
     }
 
     @Override
-    public void deleteUsername(String username) {
+    public void deleteUser(String username) {
 
-    }*/
+    }
 }

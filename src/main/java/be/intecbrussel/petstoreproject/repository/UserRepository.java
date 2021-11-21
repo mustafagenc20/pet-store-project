@@ -7,10 +7,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface UserRepository{ // extends JpaRepository<User, Long> {
-/*
-    Order save(Order order);
-    List<Order> findById(Long id);
-    List<Order> findByStatus(String status);
-    void delete(Long id);*/
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User createUser(User user);
+    List<User> createWithArray(Long id);
+    List<User> createWithList(String username);
+    User login(String username, String password);
+    User logout();
+    User getUserByUsername(String username);
+    User updateUser(String username);
+    void deleteUserByUsername(String username);
 }
