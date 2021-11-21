@@ -17,28 +17,22 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity createPet(@RequestBody User user) {
-        if (user == null) {
-            return ResponseEntity.badRequest().body(new ApiResponse(405, "invalid input", "invalid input"));
-        } else {
-            userService.createUser(user);
-            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(200, "OK", "Pet saved to database"));
-        }
+    public ResponseEntity createUser(@RequestBody User user) {
+        userService.createUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(200, "Successful operation", "Successful operation"));
+    }
+
+    @PostMapping
+    public ResponseEntity updateUser(@RequestBody User user) {
+        userService.updateUser(user.getUsername());
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(200, "Successful operation", "Successful operation"));
+    }
+
+    @DeleteMapping("{username}")
+    public ResponseEntity deleteUserByUsername(@PathVariable("username") String username) {
+        userService.deleteUser(username);
+        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"OK","Pet deleted"));
     }
 
 
-    @DeleteMapping("{id}")
-    public ResponseEntity id(@PathVariable("username") String username) {
-        if (username == null) {
-            return ResponseEntity.badRequest().body(new ApiResponse(404,
-                    "Invalid ID supplied",
-                    "Invalid ID supplied"));
-        } else if (userService.u(id) == null) {
-            return ResponseEntity.status(HttpStatus.FOUND).body(new ApiResponse(404, "not found", " pet not found."));
-        }
-        else {
-            petService.deletePetById(id);
-            return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"OK","Pet deleted from the database"));
-        }
-    }
 }
