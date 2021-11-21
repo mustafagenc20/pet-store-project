@@ -9,12 +9,8 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User createUser(User user);
-    List<User> createWithArray(Long id);
-    List<User> createWithList(String username);
-    User login(String username, String password);
-    User logout();
-    User getUserByUsername(String username);
-    User updateUser(String username);
-    void deleteUserByUsername(String username);
+    User save(User user);
+//    List<User> saveAll(List<User> user);
+    User findByUsername(String username);
+    void deleteByUsername(String username);
 }

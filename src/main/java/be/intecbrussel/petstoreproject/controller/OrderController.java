@@ -2,27 +2,24 @@ package be.intecbrussel.petstoreproject.controller;
 
 import be.intecbrussel.petstoreproject.models.ApiResponse;
 import be.intecbrussel.petstoreproject.models.entity.Order;
-import be.intecbrussel.petstoreproject.models.entity.Pet;
-import be.intecbrussel.petstoreproject.repository.OrderRepository;
-import be.intecbrussel.petstoreproject.service.StoreService;
+import be.intecbrussel.petstoreproject.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/store")
 @RequiredArgsConstructor
-public class StoreController {
+public class OrderController {
 
-    private final StoreService storeService;
+    private final OrderService orderService;
 
     @GetMapping("/inventory")
-    public ResponseEntity<List<Order>> createOrder(Order order){
-        return null;
+    public ResponseEntity<List<Order>> findAllByStatus(String status){
+        return ResponseEntity.status(HttpStatus.OK).body(orderService.findAllByStatus(status));
     }
 
     @PostMapping("/order")

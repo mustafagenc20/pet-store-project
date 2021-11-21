@@ -9,15 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-//@Entity
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "orders")
 public class Order {
-//    @Id
-//    @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
 
     private long petId;

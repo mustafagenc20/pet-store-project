@@ -22,14 +22,14 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(200, "Successful operation", "Successful operation"));
     }
 
-    @PostMapping
+    @PutMapping
     public ResponseEntity updateUser(@RequestBody User user) {
-        userService.updateUser(user.getUsername());
+        userService.updateUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(200, "Successful operation", "Successful operation"));
     }
 
     @DeleteMapping("{username}")
-    public ResponseEntity deleteUserByUsername(@PathVariable("username") String username) {
+    public ResponseEntity deleteUser(@PathVariable("username") String username) {
         userService.deleteUser(username);
         return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(200,"OK","Pet deleted"));
     }

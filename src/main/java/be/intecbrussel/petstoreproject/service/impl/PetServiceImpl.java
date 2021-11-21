@@ -10,14 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service("petService")
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class PetServiceImpl implements PetService {
 
     private final PetRepository petRepository;
-
-    public PetServiceImpl(PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
 
     @Override
     public Pet createPet(Pet pet) {
