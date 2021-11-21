@@ -20,12 +20,12 @@ public class Pet {
     private Long Id;
 
 //    @ManyToOne
-//    private Category category;
+    private Category category;
     private String name;
 
 //    @ElementCollection(fetch = FetchType.EAGER)
 //    @Fetch(FetchMode.SUBSELECT)
-//    private List<String> photoUrls;
+    private List<String> photoUrls;
 
 /*    @ManyToMany
     private List<Tag> tags;*/
