@@ -20,8 +20,8 @@ public class Pet {
     @GeneratedValue
     private Long Id;
 
-//    @ManyToOne
-//    private Category category;
+    @ManyToOne
+    private Category category;
     private String name;
 
 //    @ElementCollection(fetch = FetchType.EAGER)
