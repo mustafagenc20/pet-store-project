@@ -1,4 +1,5 @@
 package be.intecbrussel.petstoreproject.models.entity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import org.hibernate.annotations.Fetch;
@@ -27,6 +28,7 @@ public class Pet {
 //    @Fetch(FetchMode.SUBSELECT)
 //    private List<String> photoUrls;
 
+//    @JsonManagedReference
 /*    @ManyToMany
     private List<Tag> tags;*/
     private String status;
