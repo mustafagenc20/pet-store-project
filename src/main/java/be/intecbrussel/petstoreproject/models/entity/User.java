@@ -10,10 +10,13 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
+//@Data
+
 public class User {
 
     @Id
     @GeneratedValue
+
     private Integer id;
     private String username;
     private String firstName;
