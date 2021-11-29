@@ -22,10 +22,10 @@ public class PetController {
     @PostMapping
     public ResponseEntity createPet(@RequestBody Pet pet) {
         if (pet == null) {
-            return ResponseEntity.badRequest().body(new ApiResponse(405, "invalid input", "invalid input"));
+            return ResponseEntity.badRequest().body(new ApiResponse(415, "invalid input", "invalid input"));
         } else {
             petService.createPet(pet);
-            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(200, "OK", "Pet saved to database"));
+            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(201, "OK", "Pet saved to database"));
         }
     }
 
