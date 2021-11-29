@@ -31,7 +31,7 @@ public class OrderController {
 
     @GetMapping("/order/{id}")
     public ResponseEntity getOrderById(@PathVariable("id") Long id) {
-        return ResponseEntity.badRequest().body(new ApiResponse(400,
+        return ResponseEntity.badRequest().body(new ApiResponse(410,
                     "Invalid ID supplied",
                     "Invalid ID supplied"));
     }
